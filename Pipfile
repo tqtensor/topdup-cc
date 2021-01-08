@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+boto3 = "*"
+s3fs = "*"
+pandas = "*"
+pyarrow = "*"
+warc3-wet = "*"
+tqdm = "*"
+vncorenlp = "*"
+torch = "*"
+transformers = "*"
+scikit-learn = "*"
+beautifulsoup4 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

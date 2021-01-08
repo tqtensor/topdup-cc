@@ -1,0 +1,14 @@
+.DS_Store
+.vscode
+crawl-data
+crawl-text
+*.html
+*.warc.gz
+*.txt
+*.gzip
+*.log
+*.csv
+*.htm
+*.bin
+__pycache__
+crawler/config.py
