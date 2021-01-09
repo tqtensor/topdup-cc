@@ -1,6 +1,7 @@
 import re
 import sys
 import time
+import os
 
 import boto3
 import config
@@ -26,6 +27,8 @@ session = boto3.Session(
     aws_session_token=session_token,
 )
 
+gzip_data_folder = config.gzip_data_folder
+
 ### Run this query to get the right url_host_name
 """
 SELECT COUNT(*)
@@ -43,7 +46,7 @@ url_host_name = "vntalking.com"
 params = {
     "region": "us-east-1",
     "database": "ccindex",
-    "bucket": "cc-kisspatent",
+    "bucket": config.bucket_name,
     "path": "athena/output",
     "query": f"""SELECT url, fetch_time, warc_filename, warc_record_offset, warc_record_length FROM "ccindex"."ccindex" WHERE regexp_like(crawl, 'CC-MAIN-20[1-2][0-9]-[0-9][0-9]') AND subset = 'warc' AND url_host_name = '{url_host_name}'""",
 }
@@ -93,6 +96,10 @@ def cleanup(session, params):
 
 
 if __name__ == "__main__":
+
+    if not os.path.exists(gzip_data_folder):
+        os.mkdir(gzip_data_folder)
+
     # Query Athena and get the s3 filename as a result
     s3_filename = athena_to_s3(session, params, 30)
     if s3_filename in ["RUNNING", "FAILED", "QUEUED"]:
