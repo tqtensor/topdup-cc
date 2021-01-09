@@ -5,6 +5,7 @@ crawl-text
 *.html
 *.warc.gz
 *.txt
+!requirements.txt
 *.gzip
 *.log
 *.csv

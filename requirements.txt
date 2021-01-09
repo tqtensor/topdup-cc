@@ -1,0 +1,11 @@
+boto3
+s3fs==0.5.2
+pandas==1.2.0
+pyarrow==2.0.0
+warc3-wet==0.2.3
+tqdm==4.55.2
+vncorenlp==1.0.3
+torch
+transformers==4.1.1
+scikit-learn==0.24.0
+beautifulsoup4==4.9.3
