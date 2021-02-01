@@ -60,6 +60,7 @@ if __name__ == "__main__":
             "vuilaptrinh": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
             "toidicodedao": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
             "codeaholicguy": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
+            "angel": r"angel.co/company",
         }
 
         url_regex = re.compile(r".*")  # default

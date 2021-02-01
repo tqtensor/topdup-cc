@@ -9,4 +9,4 @@ session_key_secret = "your_input"
 session_token = "your_input"
 
 gzip_data_folder = "./gzip"
-bucket_name="your_s3_bucket_name"
+bucket_name = "your_s3_bucket_name"

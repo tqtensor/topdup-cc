@@ -1,7 +1,7 @@
+import os
 import re
 import sys
 import time
-import os
 
 import boto3
 import config
@@ -41,7 +41,7 @@ GROUP BY url_host_name
 """
 
 ### Replace the url_host_name
-url_host_name = "vntalking.com"
+url_host_name = "angel.co"
 
 params = {
     "region": "us-east-1",
@@ -121,6 +121,6 @@ if __name__ == "__main__":
     df.drop_duplicates(subset="url", keep="first", inplace=True)
 
     df.to_parquet(
-        "./gzip/{}.parquet.gzip".format(url_host_name.replace(".", "_")),
+        "{0}/{1}.parquet.gzip".format(gzip_data_folder, url_host_name.replace(".", "_")),
         compression="gzip",
     )
