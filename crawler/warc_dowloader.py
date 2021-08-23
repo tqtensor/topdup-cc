@@ -7,6 +7,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 from time import time
 
 import boto3
+import config
 import numpy as np
 import pandas as pd
 from botocore import UNSIGNED
@@ -53,15 +54,7 @@ if __name__ == "__main__":
     for url_host_name in glob.glob("./gzip/*.gzip"):
         url_host_name = os.path.basename(url_host_name).replace(".parquet.gzip", "")
 
-        regex_dict = {
-            "tinhte": r"tinhte.vn/thread",
-            "topdev": r"topdev.vn/blog",
-            "kipalog": r"kipalog.com/post",
-            "vuilaptrinh": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
-            "toidicodedao": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
-            "codeaholicguy": r"(/|-)[0-9]{4}(/|-)[0-9]{2}(/|-)[0-9]{2}",
-            "angel": r"angel.co/company",
-        }
+        regex_dict = config.regex_dict
 
         url_regex = re.compile(r".*")  # default
         for k in regex_dict.keys():

@@ -10,3 +10,6 @@ session_token = "your_input"
 
 gzip_data_folder = "./gzip"
 bucket_name = "your_s3_bucket_name"
+
+url_host_name = "www.google.com"
+regex_dict = {"google": r"google.com/"}

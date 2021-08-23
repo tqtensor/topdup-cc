@@ -4,19 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+beautifulsoup4 = "*"
 boto3 = "*"
-s3fs = "*"
 pandas = "*"
 pyarrow = "*"
-warc3-wet = "*"
+s3fs = "*"
 tqdm = "*"
-vncorenlp = "*"
-torch = "*"
-transformers = "*"
-scikit-learn = "*"
-beautifulsoup4 = "*"
+warc3-wet = "*"
 
 [dev-packages]
+pipfile-sort = "*"
+pre-commit = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
